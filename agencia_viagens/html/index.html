@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViagemFácil - Sua Agência de Viagens Online</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header com navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>ViagemFácil</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reservas.html" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pacotes.html" class="nav-link">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atendimento.html" class="nav-link">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link login-btn">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Descubra o Mundo com a ViagemFácil</h1>
+            <p class="hero-subtitle">Sua próxima aventura está a um clique de distância. Reservas automáticas, pacotes
+                personalizados e atendimento excepcional.</p>
+            <div class="hero-buttons">
+                <a href="reservas.html" class="btn btn-primary">Fazer Reserva</a>
+                <a href="pacotes.html" class="btn btn-secondary">Ver Pacotes</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="../img/maldivas.png" alt="Viagem dos sonhos">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a ViagemFácil?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Automação Inteligente</h3>
+                    <p>Sistema automatizado de reservas que encontra as melhores opções para você em segundos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Pacotes Personalizados</h3>
+                    <p>Controle total sobre seus pacotes de viagem com opções flexíveis e personalizáveis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atendimento 24/7</h3>
+                    <p>Suporte especializado disponível a qualquer hora para garantir sua tranquilidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Search Section -->
+    <section class="quick-search">
+        <div class="container">
+            <h2 class="section-title">Busca Rápida</h2>
+            <div class="search-form">
+                <div class="search-tabs">
+                    <button class="tab-btn active" data-tab="voos">Voos</button>
+                    <button class="tab-btn" data-tab="hoteis">Hotéis</button>
+                    <button class="tab-btn" data-tab="pacotes">Pacotes</button>
+                </div>
+                <form class="search-content" id="search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="origem">Origem</label>
+                            <input type="text" id="origem" placeholder="De onde você sai?">
+                        </div>
+                        <div class="form-group">
+                            <label for="destino">Destino</label>
+                            <input type="text" id="destino" placeholder="Para onde vai?">
+                        </div>
+                        <div class="form-group">
+                            <label for="ida">Data de Ida</label>
+                            <input type="date" id="ida">
+                        </div>
+                        <div class="form-group">
+                            <label for="volta">Data de Volta</label>
+                            <input type="date" id="volta">
+                        </div>
+                        <div class="form-group">
+                            <label for="passageiros">Passageiros</label>
+                            <select id="passageiros">
+                                <option value="1">1 Passageiro</option>
+                                <option value="2">2 Passageiros</option>
+                                <option value="3">3 Passageiros</option>
+                                <option value="4">4+ Passageiros</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary search-btn">
+                        <i class="fas fa-search"></i>
+                        Buscar
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <h2 class="section-title">Destinos Populares</h2>
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <img src="../img/paris-franca.png" alt="Paris">
+                    <div class="destination-info">
+                        <h3>Paris, França</h3>
+                        <p>A cidade do amor e da luz</p>
+                        <span class="price">A partir de R$ 2.999</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../img/tokyo-japao.png" alt="Tóquio">
+                    <div class="destination-info">
+                        <h3>Tóquio, Japão</h3>
+                        <p>Tradição e modernidade</p>
+                        <span class="price">A partir de R$ 3.499</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../img/maldivas-tropical.png" alt="Maldivas">
+                    <div class="destination-info">
+                        <h3>Maldivas</h3>
+                        <p>Paraíso tropical</p>
+                        <span class="price">A partir de R$ 4.999</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="../img/newyork-city.png" alt="Nova York">
+                    <div class="destination-info">
+                        <h3>Nova York, EUA</h3>
+                        <p>A cidade que nunca dorme</p>
+                        <span class="price">A partir de R$ 2.799</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>ViagemFácil</span>
+                    </div>
+                    <p>Sua agência de viagens online com automação inteligente e atendimento personalizado.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="reservas.html">Reservas de Voos</a></li>
+                        <li><a href="reservas.html">Reservas de Hotéis</a></li>
+                        <li><a href="pacotes.html">Pacotes de Viagem</a></li>
+                        <li><a href="atendimento.html">Atendimento ao Cliente</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Suporte</h3>
+                    <ul>
+                        <li><a href="atendimento.html">Central de Ajuda</a></li>
+                        <li><a href="contato.html">Fale Conosco</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 4000-0000</p>
+                        <p><i class="fas fa-envelope"></i> contato@viagemfacil.com.br</p>
+                        <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViagemFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+
+</html>

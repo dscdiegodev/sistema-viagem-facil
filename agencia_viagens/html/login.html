@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ViagemFácil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header com navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>ViagemFácil</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reservas.html" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pacotes.html" class="nav-link">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atendimento.html" class="nav-link">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link login-btn active">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="login-container">
+            <div class="login-wrapper">
+                <!-- Área de Login -->
+                <div class="login-section" id="login-section">
+                    <div class="login-header">
+                        <div class="login-logo">
+                            <i class="fas fa-plane"></i>
+                            <h1>ViagemFácil</h1>
+                        </div>
+                        <h2>Bem-vindo de volta!</h2>
+                        <p>Faça login para acessar sua conta e gerenciar suas viagens</p>
+                    </div>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="login-email">E-mail</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="login-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="login-password">Senha</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="login-password" name="password" placeholder="Sua senha" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="remember-me" name="remember">
+                                <span class="checkmark"></span>
+                                Lembrar de mim
+                            </label>
+                            <a href="#" class="forgot-password" onclick="showForgotPassword()">Esqueci minha senha</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Entrar
+                        </button>
+
+                        <div class="divider">
+                            <span>ou</span>
+                        </div>
+
+                        <div class="social-login">
+                            <button type="button" class="btn btn-social google" onclick="loginWithGoogle()">
+                                <i class="fab fa-google"></i>
+                                Entrar com Google
+                            </button>
+                            <button type="button" class="btn btn-social facebook" onclick="loginWithFacebook()">
+                                <i class="fab fa-facebook-f"></i>
+                                Entrar com Facebook
+                            </button>
+                        </div>
+
+                        <div class="auth-switch">
+                            <p>Não tem uma conta? <a href="#" onclick="showRegister()">Cadastre-se aqui</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Área de Cadastro -->
+                <div class="register-section" id="register-section" style="display: none;">
+                    <div class="login-header">
+                        <div class="login-logo">
+                            <i class="fas fa-plane"></i>
+                            <h1>ViagemFácil</h1>
+                        </div>
+                        <h2>Crie sua conta</h2>
+                        <p>Cadastre-se para começar a planejar suas viagens dos sonhos</p>
+                    </div>
+
+                    <form id="register-form" class="auth-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-nome">Nome</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-nome" name="nome" placeholder="Seu nome" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-sobrenome">Sobrenome</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-sobrenome" name="sobrenome" placeholder="Seu sobrenome" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">E-mail</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="register-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-telefone">Telefone</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="register-telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-password">Senha</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="register-password" name="password" placeholder="Mínimo 8 caracteres" required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword('register-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-confirm-password">Confirmar Senha</label>
+                                <div class="input-wrapper">
+                                    <i class="fas fa-lock"></i>
+                                    <input type="password" id="register-confirm-password" name="confirmPassword" placeholder="Confirme sua senha" required>
+                                    <button type="button" class="password-toggle" onclick="togglePassword('register-confirm-password')">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="password-requirements">
+                            <p>Sua senha deve conter:</p>
+                            <ul>
+                                <li id="req-length"><i class="fas fa-times"></i> Pelo menos 8 caracteres</li>
+                                <li id="req-uppercase"><i class="fas fa-times"></i> Uma letra maiúscula</li>
+                                <li id="req-lowercase"><i class="fas fa-times"></i> Uma letra minúscula</li>
+                                <li id="req-number"><i class="fas fa-times"></i> Um número</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="register-terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                Concordo com os <a href="#" target="_blank">termos de uso</a> e <a href="#" target="_blank">política de privacidade</a>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="register-newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Desejo receber ofertas especiais e novidades por e-mail
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-user-plus"></i>
+                            Criar Conta
+                        </button>
+
+                        <div class="auth-switch">
+                            <p>Já tem uma conta? <a href="#" onclick="showLogin()">Faça login aqui</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Área de Recuperação de Senha -->
+                <div class="forgot-section" id="forgot-section" style="display: none;">
+                    <div class="login-header">
+                        <div class="login-logo">
+                            <i class="fas fa-plane"></i>
+                            <h1>ViagemFácil</h1>
+                        </div>
+                        <h2>Recuperar Senha</h2>
+                        <p>Digite seu e-mail para receber instruções de recuperação</p>
+                    </div>
+
+                    <form id="forgot-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="forgot-email">E-mail</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="forgot-email" name="email" placeholder="seu@email.com" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Instruções
+                        </button>
+
+                        <div class="auth-switch">
+                            <p><a href="#" onclick="showLogin()">← Voltar ao login</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Área de Sucesso -->
+                <div class="success-section" id="success-section" style="display: none;">
+                    <div class="success-content">
+                        <div class="success-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2 id="success-title">Bem-vindo!</h2>
+                        <p id="success-message">Login realizado com sucesso. Redirecionando...</p>
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Informações Laterais -->
+            <div class="info-sidebar">
+                <div class="info-content">
+                    <h3>Por que criar uma conta?</h3>
+                    <div class="benefits-list">
+                        <div class="benefit-item">
+                            <i class="fas fa-bookmark"></i>
+                            <div>
+                                <h4>Salvar Favoritos</h4>
+                                <p>Guarde seus destinos e pacotes preferidos</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <h4>Histórico de Viagens</h4>
+                                <p>Acesse todas as suas reservas anteriores</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h4>Ofertas Exclusivas</h4>
+                                <p>Receba promoções personalizadas</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-headset"></i>
+                            <div>
+                                <h4>Suporte Prioritário</h4>
+                                <p>Atendimento preferencial 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>ViagemFácil</span>
+                    </div>
+                    <p>Sua agência de viagens online com automação inteligente e atendimento personalizado.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 4000-0000</li>
+                        <li><i class="fas fa-envelope"></i> contato@viagemfacil.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123 - SP</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="atendimento.html">Atendimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViagemFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
+

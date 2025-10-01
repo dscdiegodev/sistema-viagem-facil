@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - ViagemFácil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contato.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header com navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>ViagemFácil</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reservas.html" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pacotes.html" class="nav-link">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atendimento.html" class="nav-link">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link active">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link login-btn">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Entre em Contato</h1>
+                <p>Estamos aqui para tornar sua viagem dos sonhos realidade</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Informações de Contato -->
+                <section class="contact-info">
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Endereço</h3>
+                            <p>Rua das Viagens, 123<br>
+                                Centro - São Paulo/SP<br>
+                                CEP: 01234-567</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h3>Telefone</h3>
+                            <p><strong>(11) 4000-0000</strong></p>
+                            <p>Segunda a Sexta: 8h às 22h</p>
+                            <p>Sábado: 8h às 18h</p>
+                        </div>
+
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>E-mail</h3>
+                            <p><strong>contato@viagemfacil.com.br</strong></p>
+                            <p></p>Resposta em até 2 horas</p>
+                            <p>24 horas por dia</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>WhatsApp</h3>
+                            <p><strong>(11) 99999-9999</strong></p>
+                            <p>Atendimento rápido</p>
+                            <p>Segunda a Domingo</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formulário de Contato -->
+                <section class="contact-form-section">
+                    <div class="form-container">
+                        <h2>Envie sua Mensagem</h2>
+                        <p>Preencha o formulário abaixo e entraremos em contato em breve</p>
+
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nome">Nome Completo *</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999">
+                                </div>
+                                <div class="form-group">
+                                    <label for="assunto">Assunto *</label>
+                                    <select id="assunto" name="assunto" required>
+                                        <option value="">Selecione um assunto</option>
+                                        <option value="informacoes">Informações sobre Viagens</option>
+                                        <option value="orcamento">Solicitar Orçamento</option>
+                                        <option value="reserva">Dúvidas sobre Reserva</option>
+                                        <option value="cancelamento">Cancelamento/Alteração</option>
+                                        <option value="reclamacao">Reclamação</option>
+                                        <option value="elogio">Elogio/Sugestão</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="destino">Destino de Interesse</label>
+                                <input type="text" id="destino" name="destino"
+                                    placeholder="Para onde você gostaria de viajar?">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem *</label>
+                                <textarea id="mensagem" name="mensagem" rows="6"
+                                    placeholder="Descreva sua solicitação ou dúvida..." required></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Desejo receber ofertas especiais e novidades por e-mail
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="termos" name="termos" required>
+                                    <span class="checkmark"></span>
+                                    Concordo com os <a href="#" target="_blank">termos de uso</a> e <a href="#"
+                                        target="_blank">política de privacidade</a> *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Mapa e Localização -->
+                <section class="location-section">
+                    <h2>Nossa Localização</h2>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>ViagemFácil - Agência de Turismo</h3>
+                            <p>Rua das Viagens, 123 - Centro<br>São Paulo/SP - CEP: 01234-567</p>
+                            <div class="map-actions">
+                                <button class="btn btn-secondary" onclick="openGoogleMaps()">
+                                    <i class="fas fa-directions"></i>
+                                    Ver no Google Maps
+                                </button>
+                                <button class="btn btn-secondary" onclick="openWaze()">
+                                    <i class="fas fa-route"></i>
+                                    Abrir no Waze
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Horários de Funcionamento -->
+                <section class="hours-section">
+                    <h2>Horários de Funcionamento</h2>
+                    <div class="hours-grid">
+                        <div class="hours-card">
+                            <h3>Atendimento Presencial</h3>
+                            <div class="hours-list">
+                                <div class="hour-item">
+                                    <span class="day">Segunda a Sexta</span>
+                                    <span class="time">8h às 18h</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Sábado</span>
+                                    <span class="time">8h às 14h</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Domingo</span>
+                                    <span class="time">Fechado</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hours-card">
+                            <h3>Atendimento Telefônico</h3>
+                            <div class="hours-list">
+                                <div class="hour-item">
+                                    <span class="day">Segunda a Sexta</span>
+                                    <span class="time">8h às 22h</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Sábado</span>
+                                    <span class="time">8h às 18h</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">Domingo</span>
+                                    <span class="time">10h às 16h</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hours-card">
+                            <h3>Atendimento Online</h3>
+                            <div class="hours-list">
+                                <div class="hour-item">
+                                    <span class="day">Chat Online</span>
+                                    <span class="time">24h por dia</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">E-mail</span>
+                                    <span class="time">24h por dia</span>
+                                </div>
+                                <div class="hour-item">
+                                    <span class="day">WhatsApp</span>
+                                    <span class="time">8h às 22h</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Redes Sociais -->
+                <section class="social-section">
+                    <h2>Siga-nos nas Redes Sociais</h2>
+                    <p>Acompanhe nossas ofertas especiais e dicas de viagem</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="#" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-link twitter" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                            <span>Twitter</span>
+                        </a>
+                        <a href="#" class="social-link youtube" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="#" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>ViagemFácil</span>
+                    </div>
+                    <p>Sua agência de viagens online com automação inteligente e atendimento personalizado.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 4000-0000</li>
+                        <li><i class="fas fa-envelope"></i> contato@viagemfacil.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua das Viagens, 123 - SP</li>
+                        <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="pacotes.html">Pacotes</a></li>
+                        <li><a href="atendimento.html">Atendimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViagemFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/contato.js"></script>
+</body>
+
+</html>

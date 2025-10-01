@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacotes de Viagem - ViagemFácil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pacotes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header com navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>ViagemFácil</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reservas.html" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pacotes.html" class="nav-link active">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atendimento.html" class="nav-link">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link login-btn">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Pacotes de Viagem Personalizados</h1>
+                <p>Descubra destinos incríveis com nossos pacotes completos e personalizáveis</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters-section">
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="destino-filter">Destino</label>
+                        <select id="destino-filter">
+                            <option value="">Todos os destinos</option>
+                            <option value="europa">Europa</option>
+                            <option value="asia">Ásia</option>
+                            <option value="america-norte">América do Norte</option>
+                            <option value="america-sul">América do Sul</option>
+                            <option value="oceania">Oceania</option>
+                            <option value="africa">África</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="tipo-filter">Tipo de Viagem</label>
+                        <select id="tipo-filter">
+                            <option value="">Todos os tipos</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="relaxamento">Relaxamento</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="familia">Família</option>
+                            <option value="romantico">Romântico</option>
+                            <option value="negocios">Negócios</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="duracao-filter">Duração</label>
+                        <select id="duracao-filter">
+                            <option value="">Qualquer duração</option>
+                            <option value="3">3 dias</option>
+                            <option value="5">5 dias</option>
+                            <option value="7">7 dias</option>
+                            <option value="10">10 dias</option>
+                            <option value="15">15+ dias</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="preco-filter">Faixa de Preço</label>
+                        <select id="preco-filter">
+                            <option value="">Qualquer preço</option>
+                            <option value="0-1000">Até R$ 1.000</option>
+                            <option value="1000-3000">R$ 1.000 - R$ 3.000</option>
+                            <option value="3000-5000">R$ 3.000 - R$ 5.000</option>
+                            <option value="5000-10000">R$ 5.000 - R$ 10.000</option>
+                            <option value="10000+">Acima de R$ 10.000</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filtrar
+                    </button>
+                    
+                    <button class="btn btn-secondary" onclick="clearFilters()">
+                        <i class="fas fa-times"></i>
+                        Limpar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pacotes em Destaque -->
+            <section class="featured-packages">
+                <h2>Pacotes em Destaque</h2>
+                <div class="packages-grid" id="featured-packages">
+                    <!-- Pacotes em destaque serão inseridos aqui via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Todos os Pacotes -->
+            <section class="all-packages">
+                <div class="section-header">
+                    <h2>Todos os Pacotes</h2>
+                    <div class="sort-options">
+                        <label for="sort-by">Ordenar por:</label>
+                        <select id="sort-by" onchange="sortPackages()">
+                            <option value="relevancia">Relevância</option>
+                            <option value="preco-menor">Menor Preço</option>
+                            <option value="preco-maior">Maior Preço</option>
+                            <option value="duracao">Duração</option>
+                            <option value="avaliacao">Avaliação</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="packages-grid" id="all-packages">
+                    <!-- Todos os pacotes serão inseridos aqui via JavaScript -->
+                </div>
+                
+                <div class="load-more">
+                    <button class="btn btn-secondary" onclick="loadMorePackages()">
+                        <i class="fas fa-plus"></i>
+                        Carregar Mais Pacotes
+                    </button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de Detalhes do Pacote -->
+    <div class="modal" id="package-modal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modal-title">Detalhes do Pacote</h3>
+                    <button class="modal-close" onclick="closePackageModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Conteúdo do modal será inserido aqui -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closePackageModal()">Fechar</button>
+                    <button class="btn btn-primary" onclick="bookPackage()">Reservar Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>ViagemFácil</span>
+                    </div>
+                    <p>Sua agência de viagens online com automação inteligente e atendimento personalizado.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Serviços</h3>
+                    <ul>
+                        <li><a href="reservas.html">Reservas de Voos</a></li>
+                        <li><a href="reservas.html">Reservas de Hotéis</a></li>
+                        <li><a href="pacotes.html">Pacotes de Viagem</a></li>
+                        <li><a href="atendimento.html">Atendimento ao Cliente</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 4000-0000</p>
+                        <p><i class="fas fa-envelope"></i> contato@viagemfacil.com.br</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViagemFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/pacotes.js"></script>
+</body>
+</html>
+

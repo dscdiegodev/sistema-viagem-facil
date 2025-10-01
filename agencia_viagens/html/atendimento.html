@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento ao Cliente - ViagemFácil</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/atendimento.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header com navegação -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-plane"></i>
+                    <span>ViagemFácil</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reservas.html" class="nav-link">Reservas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="pacotes.html" class="nav-link">Pacotes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="atendimento.html" class="nav-link active">Atendimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="login.html" class="nav-link login-btn">Login</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Central de Atendimento</h1>
+                <p>Estamos aqui para ajudar você em todas as etapas da sua viagem</p>
+            </div>
+
+            <!-- Opções de Atendimento -->
+            <section class="support-options">
+                <div class="options-grid">
+                    <div class="option-card" onclick="openChatBot()">
+                        <div class="option-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Chat Inteligente</h3>
+                        <p>Atendimento automatizado 24/7 com respostas instantâneas</p>
+                        <span class="status online">Online</span>
+                    </div>
+                    
+                    <div class="option-card" onclick="openLiveChat()">
+                        <div class="option-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Chat ao Vivo</h3>
+                        <p>Fale com nossos especialistas em tempo real</p>
+                        <span class="status online">Disponível</span>
+                    </div>
+                    
+                    <div class="option-card" onclick="openTicketForm()">
+                        <div class="option-icon">
+                            <i class="fas fa-ticket-alt"></i>
+                        </div>
+                        <h3>Abrir Chamado</h3>
+                        <p>Envie sua solicitação e receba retorno em até 2 horas</p>
+                        <span class="status">Garantido</span>
+                    </div>
+                    
+                    <div class="option-card" onclick="callPhone()">
+                        <div class="option-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Telefone</h3>
+                        <p>Ligue para nossa central de atendimento</p>
+                        <span class="status">(11) 4000-0000</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section class="faq-section">
+                <h2>Perguntas Frequentes</h2>
+                <div class="faq-search">
+                    <input type="text" id="faq-search" placeholder="Buscar nas perguntas frequentes...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="faq-categories">
+                    <button class="category-btn active" data-category="all">Todas</button>
+                    <button class="category-btn" data-category="reservas">Reservas</button>
+                    <button class="category-btn" data-category="pagamento">Pagamento</button>
+                    <button class="category-btn" data-category="cancelamento">Cancelamento</button>
+                    <button class="category-btn" data-category="documentos">Documentos</button>
+                    <button class="category-btn" data-category="bagagem">Bagagem</button>
+                </div>
+                
+                <div class="faq-list" id="faq-list">
+                    <!-- FAQ items serão inseridos aqui via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Status da Reserva -->
+            <section class="booking-status">
+                <h2>Consultar Status da Reserva</h2>
+                <div class="status-form">
+                    <form id="status-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-code">Código da Reserva</label>
+                                <input type="text" id="booking-code" placeholder="Ex: VF12345678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-email">E-mail</label>
+                                <input type="email" id="booking-email" placeholder="seu@email.com" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-search"></i>
+                                Consultar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="status-result" id="status-result" style="display: none;">
+                    <!-- Resultado da consulta será inserido aqui -->
+                </div>
+            </section>
+
+            <!-- Avaliação do Atendimento -->
+            <section class="feedback-section">
+                <h2>Avalie Nosso Atendimento</h2>
+                <div class="feedback-form">
+                    <form id="feedback-form">
+                        <div class="rating-section">
+                            <label>Como você avalia nosso atendimento?</label>
+                            <div class="star-rating">
+                                <input type="radio" name="rating" value="5" id="star5">
+                                <label for="star5">★</label>
+                                <input type="radio" name="rating" value="4" id="star4">
+                                <label for="star4">★</label>
+                                <input type="radio" name="rating" value="3" id="star3">
+                                <label for="star3">★</label>
+                                <input type="radio" name="rating" value="2" id="star2">
+                                <label for="star2">★</label>
+                                <input type="radio" name="rating" value="1" id="star1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-message">Deixe seu comentário (opcional)</label>
+                            <textarea id="feedback-message" rows="4" placeholder="Conte-nos sobre sua experiência..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Avaliação
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-headset"></i>
+                <span>Atendimento ViagemFácil</span>
+            </div>
+            <button class="chat-close" onclick="closeChatWidget()">&times;</button>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-message bot">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Olá! Sou o assistente virtual da ViagemFácil. Como posso ajudá-lo hoje?</p>
+                    <div class="quick-options">
+                        <button onclick="sendQuickMessage('Quero fazer uma reserva')">Fazer reserva</button>
+                        <button onclick="sendQuickMessage('Consultar minha reserva')">Consultar reserva</button>
+                        <button onclick="sendQuickMessage('Cancelar reserva')">Cancelar reserva</button>
+                        <button onclick="sendQuickMessage('Falar com atendente')">Falar com atendente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chat-message-input" placeholder="Digite sua mensagem...">
+            <button onclick="sendChatMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ticket Modal -->
+    <div class="modal" id="ticket-modal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Abrir Chamado de Suporte</h3>
+                    <button class="modal-close" onclick="closeTicketModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="ticket-form">
+                        <div class="form-group">
+                            <label for="ticket-category">Categoria</label>
+                            <select id="ticket-category" required>
+                                <option value="">Selecione uma categoria</option>
+                                <option value="reserva">Problemas com Reserva</option>
+                                <option value="pagamento">Questões de Pagamento</option>
+                                <option value="cancelamento">Cancelamento/Reembolso</option>
+                                <option value="documentos">Documentação</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticket-subject">Assunto</label>
+                            <input type="text" id="ticket-subject" placeholder="Descreva brevemente o problema" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticket-description">Descrição Detalhada</label>
+                            <textarea id="ticket-description" rows="5" placeholder="Descreva seu problema em detalhes..." required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ticket-name">Seu Nome</label>
+                                <input type="text" id="ticket-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticket-email">Seu E-mail</label>
+                                <input type="email" id="ticket-email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ticket-booking">Código da Reserva (se aplicável)</label>
+                            <input type="text" id="ticket-booking" placeholder="Ex: VF12345678">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" onclick="closeTicketModal()">Cancelar</button>
+                    <button class="btn btn-primary" onclick="submitTicket()">Enviar Chamado</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-plane"></i>
+                        <span>ViagemFácil</span>
+                    </div>
+                    <p>Sua agência de viagens online com automação inteligente e atendimento personalizado.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Atendimento</h3>
+                    <ul>
+                        <li><a href="#" onclick="openChatBot()">Chat Online</a></li>
+                        <li><a href="tel:1140000000">(11) 4000-0000</a></li>
+                        <li><a href="mailto:contato@viagemfacil.com.br">contato@viagemfacil.com.br</a></li>
+                        <li><a href="#">WhatsApp: (11) 99999-9999</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Horários</h3>
+                    <ul>
+                        <li>Segunda a Sexta: 8h às 22h</li>
+                        <li>Sábado: 8h às 18h</li>
+                        <li>Domingo: 10h às 16h</li>
+                        <li>Chat Online: 24h</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ViagemFácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/atendimento.js"></script>
+</body>
+</html>
+
