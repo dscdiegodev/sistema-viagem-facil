@@ -66,11 +66,6 @@ agencia_viagens/
 │   ├── pacotes.js       # Lógica dos pacotes
 │   └── atendimento.js   # Lógica do atendimento
 ├── img/                 # Imagens e protótipos
-└── docs/                # Documentação
-    ├── funcionalidades.md
-    ├── prototipos.md
-    ├── documentacao_abnt.md
-    └── todo.md
 ```
 
 ## 🚀 Como Executar
