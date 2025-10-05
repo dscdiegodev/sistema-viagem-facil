@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha - MeuApp</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3../css/ºall.min.css">
+    
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+    <main class="main-content">
+        <div class="login-container">
+            
+            <aside class="info-sidebar">
+                <div class="info-content">
+                    <h3>Recuperação de Acesso</h3>
+                    <p class="text-center text-light">Mantenha sua conta segura. Enviaremos um link de redefinição para o seu e-mail.</p>
+
+                    <div class="benefits-list mt-5">
+                        <div class="benefit-item">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <h4>Segurança Reforçada</h4>
+                                <p>Processo de recuperação de senha com verificação de identidade.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Instruções por E-mail</h4>
+                                <p>Instruções detalhadas para redefinir sua senha serão enviadas para sua caixa de entrada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="login-wrapper">
+                
+                <div id="login-section" style="display: none;"></div>
+                <div id="register-section" style="display: none;"></div>
+
+                <div id="forgot-section" class="auth-section">
+                    <div class="login-header">
+                        <div class="login-logo">
+                            <i class="fas fa-shield-alt"></i>
+                            <h1>MeuApp</h1>
+                        </div>
+                        <h2>Esqueceu sua senha?</h2>
+                        <p>Informe o seu e-mail cadastrado para prosseguir.</p>
+                    </div>
+
+                    <form id="forgot-form" class="auth-form">
+                        
+                        <div class="form-group">
+                            <label for="forgot-email">E-mail</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="forgot-email" name="email" placeholder="seu.email@exemplo.com" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Enviar Link de Recuperação
+                        </button>
+                        
+                        <div class="auth-switch">
+                            Lembrou da senha? <a href="login.html">Voltar para o Login</a>
+                        </div>
+                    </form>
+                </div>
+                
+                <div id="success-section" class="success-section" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle success-icon"></i>
+                        <h2 id="success-title"></h2>
+                        <p id="success-message"></p>
+                        <a href="login.html" class="btn btn-secondary">Voltar para o Login</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/main.js"></script>
+    
+    <script src="../js/login.js"></script> 
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializa event listeners, máscaras, etc.
+            initializeLoginPage(); 
+            
+            // Força a exibição da seção de recuperação de senha.
+            switchSection('forgot');
+        });
+    </script>
+</body>
+</html>
